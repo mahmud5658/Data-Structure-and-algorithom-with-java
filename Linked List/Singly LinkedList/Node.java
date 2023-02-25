@@ -1,5 +1,5 @@
 /*
-Find n th from the end of a singly linked list in java 
+Find n th from the end of a singly linked list in java
  */
 
 public class Node {
@@ -30,6 +30,12 @@ public class Node {
 
     // find nth node from the end of a singly linked list
     public ListNode findN(int position) {
+        if(head == null){
+            return null;
+        }
+        if(position<=0){
+            throw new IllegalArgumentException("Invalid value position"+position);
+        }
         ListNode fastPtr = head;
         ListNode slowPtr = head;
         int count = 0;
@@ -65,6 +71,6 @@ public class Node {
         s1.insert(70);
         s1.display();
         System.out.println(s1.findN(3).data);
-
+        System.out.println(s1.findN(-5).data);
     }
 }
